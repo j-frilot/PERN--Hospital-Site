@@ -1,0 +1,151 @@
+/* when get to 992 and smaller */
+@media (max-width: 992px) {
+    .hero,
+    .banner-container {
+        height: 450px;
+    }
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .specialties-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* when get to 768 and smaller */
+@media (max-width: 768px) {
+    .logo-row h1 {
+        font-size: 1.75rem;
+    }
+    .covid-alert p {
+        font-size: 16px;
+    }
+    .covid-toggle {
+        display: none;
+    }
+    .header-content {
+        padding: 0;
+    }
+
+    .hero,
+    .banner-container,
+    .covid-banner {
+        height: 350px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    .specialties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .physicianss-banner-body h2 {
+        font-size: 2.5rem;
+    }
+    .directory .results-ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .directory .results-item-flex {
+        display: block;
+    }
+    .directory .results-item-info {
+        max-width: 300px;
+        padding: 16px;
+        margin: 0 auto;
+    }
+    .directory .results-item-info .info-heading {
+        font-size: 1.75rem;
+    }
+    .top-row-info-item h3 {
+        font-size: 18px;
+    }
+    .card-cases {
+        margin: 0.5rem;
+        padding: 0.75rem;
+    }
+    .covid-content {
+        display: flex;
+        flex-direction: column;
+        color: var(--main-color);
+    }
+    .covid-content .image {
+        display: none;
+    }
+}
+
+/* when get to 600 and smaller */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+    .logo-row {
+        font-size: 1.25rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .logo-row h1 {
+        text-align: center;
+        border: initial;
+    }
+
+    .nav-bar {
+        padding: 10px;
+    }
+    footer .footer-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .copy-right {
+        font-size: 0.75rem;
+    }
+    .covid-banner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .covid-banner .covid-banner-text {
+        width: 100%;
+        height: 50%;
+    }
+    .covid-banner .covid-banner-text h1 {
+        font-size: 26px;
+    }
+    .covid-banner .covid-banner-text p {
+        display: none;
+    }
+    .covid-banner .covid-banner-asset {
+        width: 100%;
+        height: 50%;
+    }
+
+    .covid-stat-banner h1 {
+        font-size: 2rem;
+    }
+    .card-cases {
+        padding: 0.25rem;
+    }
+    .hero,
+    .banner-container,
+    .covid-banner {
+        height: 250px;
+    }
+}
+
+/* when get to 500 and smaller */
+@media (max-width: 500px) {
+    .directory .results-ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .directory .results-item {
+        margin: 1rem 0;
+    }
+    .directory .results-item-img img {
+        height: 200px;
+    }
+}
