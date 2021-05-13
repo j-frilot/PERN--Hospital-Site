@@ -16,14 +16,14 @@ app.get("/", (req, res) => {
 });
 
 // parse incoming traditional HTML form submits
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 // parse incoming JSON payloads
-app.use(express.json());
+// app.use(express.json());
 
 app.use("/api", router);
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
