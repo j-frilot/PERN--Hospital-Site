@@ -1,0 +1,63 @@
+
+                <h1 className="text-2xl">Slow The Spread</h1>
+                <p className="">
+                    Face coverings, often called masks, can help stop
+                    your germs from infecting others. Research has shown
+                    that wearing masks reduces the risk of infection,
+                    especially when combined with other prevention
+                    efforts such as washing your hands often and staying
+                    6 feet away from others.<br></br>
+                    <a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/about-face-coverings.html">
+                        CDC's Guide To Mask
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div className="flex flex-row">
+            <img src="images/covid-img-1.jpg" alt="" className="w-1/2" />
+            <div className="w-1/2">
+                <h1 className="text-2xl">Slow The Spread</h1>
+                <p className="">
+                    Face coverings, often called masks, can help stop
+                    your germs from infecting others. Research has shown
+                    that wearing masks reduces the risk of infection,
+                    especially when combined with other prevention
+                    efforts such as washing your hands often and staying
+                    6 feet away from others.<br></br>
+                    <a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/about-face-coverings.html">
+                        CDC's Guide To Mask
+                    </a>
+                </p>
+            </div>
+        </div>
+
+                <h1 className="text-2xl">Slow The Spread</h1>
+                <p className="">
+                    Face coverings, often called masks, can help stop
+                    your germs from infecting others. Research has shown
+                    that wearing masks reduces the risk of infection,
+                    especially when combined with other prevention
+                    efforts such as washing your hands often and staying
+                    6 feet away from others.<br></br>
+                    <a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/about-face-coverings.html">
+                        CDC's Guide To Mask
+
+///////////////////////////////////////
+//////////////////////////////////////
+
+API
+https://corona.lmao.ninja/v3/covid-19/states - all states/territories
+https://corona.lmao.ninja/v3/covid-19/states/mississippi  - mississippi
+https://corona.lmao.ninja/v3/covid-19/historical/usacounties/mississippi    -all counties mississippi
+
+
+<h1>{covidContent[0].heading_one}</h1>
+                <ul>
+                    <li>
+                        <p>{covidContent[0].text_one}</p>
+                    </li>
+                    <li>
+                        <p>{covidContent[0].text_two}</p>
+                    </li>
+                </ul>
