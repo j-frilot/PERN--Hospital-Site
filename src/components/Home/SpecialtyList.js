@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const SpecialtyList = () => {
     const [specialties, setSpecialties] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/api/physicians")
+        fetch("http://joshuafrilot.com/api/physicians")
             .then((response) => response.json())
             .then((response) => {
                 setSpecialties(response);

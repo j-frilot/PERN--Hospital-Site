@@ -7,7 +7,7 @@ const PhysicianResults = () => {
     const [filteredDoctor, setFilteredDoctor] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/physicians/`)
+        fetch(`http://joshuafrilot.com/api/physicians/`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response);

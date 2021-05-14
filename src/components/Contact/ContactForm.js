@@ -13,7 +13,7 @@ const ContactForm = () => {
         console.log(person_first_name, person_last_name, email, message);
 
         //post request to api to submit form
-        Axios.post(`http://localhost:5000/api/contact-us/send-message`, {
+        Axios.post(`http://joshuafrilot.com/api/contact-us/send-message`, {
             person_first_name: person_first_name,
             person_last_name: person_last_name,
             email: email,

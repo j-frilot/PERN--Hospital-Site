@@ -5,7 +5,7 @@ const Dashboard = () => {
     const [dashboard, setDashboard] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/dash")
+        fetch("http://joshuafrilot.com/api/dash")
             .then((res) => res.json())
             .then((res) => {
                 setDashboard(res);

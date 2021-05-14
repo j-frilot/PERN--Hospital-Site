@@ -8,7 +8,7 @@ const Doctor = () => {
 
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/api/physicians/${id}`)
+        fetch(`http://joshuafrilot.com/api/physicians/${id}`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response);
