@@ -30,17 +30,20 @@ const AppointmentForm = () => {
         );
 
         //post request to api to submit form
-        Axios.post(`http://localhost:5000/api/appointments/makeappointment`, {
-            patient_first_name: patient_first_name,
-            patient_last_name: patient_last_name,
-            physicians_id: physicians_id,
-            appointment_date: appointment_date,
-            insurance: insurance,
-            telephone: telephone,
-            comments: comments,
-            height: height,
-            weight: weight
-        }).then((res) => {
+        Axios.post(
+            `https://joshuafrilot.com/api/appointments/makeappointment`,
+            {
+                patient_first_name: patient_first_name,
+                patient_last_name: patient_last_name,
+                physicians_id: physicians_id,
+                appointment_date: appointment_date,
+                insurance: insurance,
+                telephone: telephone,
+                comments: comments,
+                height: height,
+                weight: weight
+            }
+        ).then((res) => {
             console.log(res);
             console.log(res.data);
         });
@@ -49,7 +52,7 @@ const AppointmentForm = () => {
     // Setting name from api and using .map() to use in the physician dropdown box.
     const [name, setName] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:4000/api/physicians/`)
+        fetch(`https://joshuafrilot.com/api/physicians/`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response);
