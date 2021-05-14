@@ -77,6 +77,10 @@
         display: none;
     }
 }
+.contact {
+    display: flex;
+    flex-direction: column;
+}
 
 /* when get to 600 and smaller */
 @media (max-width: 600px) {
