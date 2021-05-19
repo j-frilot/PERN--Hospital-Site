@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Axios from "axios";
 
 const ContactForm = () => {
     const [person_first_name, setPersonFirstName] = useState("");
@@ -12,16 +11,25 @@ const ContactForm = () => {
 
         console.log(person_first_name, person_last_name, email, message);
 
-        //post request to api to submit form
-        Axios.post(`https://melloman.live/api/contact-us/send-message`, {
-            person_first_name: person_first_name,
-            person_last_name: person_last_name,
-            email: email,
-            message: message
-        }).then((res) => {
-            console.log(res);
-            console.log(res.data);
-        });
+        fetch("https://melloman.live/api/contact-us/send-message", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                person_first_name,
+                person_last_name,
+                email,
+                message
+            })
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Success:", data);
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
     };
 
     return (
