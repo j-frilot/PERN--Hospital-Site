@@ -14,22 +14,23 @@ const PORT = process.env.PORT || 5000;
 // app.get("/", (req, res) => {
 //     res.send("<h1>Hello World!!!!!!!!!!!!!!!!!!!!</h1>");
 // });
+// commented out
 
 // parse incoming traditional HTML form submits
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 // parse incoming JSON payloads
-// app.use(express.json());
+app.use(express.json());
 
 app.use("/api", router);
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // **deploy react**
 
-app.use(express.static(path.join(__dirname, "build")));
-app.get("/*", (req, res) => {
-    res.sendFiles(path.join(__dirname, "build", index.html));
-});
+// app.use(express.static(path.join(__dirname, "build")));
+// app.get("/*", (req, res) => {
+//     res.sendFiles(path.join(__dirname, "build", index.html));
+// });
 // **deploy react **
 
 app.listen(PORT, () => {
