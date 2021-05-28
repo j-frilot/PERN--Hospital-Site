@@ -1,4 +1,4 @@
-{
+{"homepage": "https://melloman.live/",
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -14,6 +14,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "deploy-production": "react-scripts build && scp -r ./build/* josh@167.99.53.12:/var/www/melloman.live/html",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
