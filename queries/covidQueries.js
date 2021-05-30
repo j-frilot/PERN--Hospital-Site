@@ -1,4 +1,4 @@
-const conn = require("../db/dbconfig");
+const pool = require("../db/dbconfig");
 
 const covidQueries = {
     table: "covid"

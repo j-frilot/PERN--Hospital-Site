@@ -1,9 +1,9 @@
-const conn = require("../db/dbconfig");
+const pool = require("../db/dbconfig");
 
 const physicianQueries = {
     table: "physicians",
     findById: (res, table, id) => {
-        conn.query(
+        pool.query(
             `SELECT * FROM physicians WHERE physicians_id = ?`,
             [id],
             (error, results) => {
@@ -21,7 +21,7 @@ const physicianQueries = {
     },
     table: "physicians",
     filterName: (res, str) => {
-        conn.query(
+        pool.query(
             `SELECT *  FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE CONCAT('%', ? , '%'))`,
             [str, str],
             (error, results) => {

@@ -1,9 +1,9 @@
-const conn = require("../db/dbconfig");
+const pool = require("../db/dbconfig");
 
 const appointmentQueries = {
     table: "appointments",
     apptdate: (res, table) => {
-        conn.execute(
+        pool.execute(
             `SELECT appointment_date FROM appointments`,
             (error, results) => {
                 if (!error) {
@@ -29,7 +29,7 @@ const appointmentQueries = {
         const comments = req.body.comments;
         const height = req.body.height;
         const weight = req.body.weight;
-        conn.query(
+        pool.query(
             `INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [
                 patient_first_name,

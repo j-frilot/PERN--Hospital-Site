@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 router.get("/", (req, res) => {
     res.json({
-        "All Physicians": `http://localhost:${PORT}/api/physicians/`,
-        "All Appointments": `http://localhost:${PORT}/api/appointments/`,
-        Dashboard: `http://localhost:${PORT}/api/dash/`,
-        "All Covid Banner": `http://localhost:${PORT}/api/covid/`
+        "All Physicians": `https://melloman.live/api/physicians`,
+        "All Appointments": `https://melloman.live/api/appointments`,
+        Dashboard: `https://melloman.live/api/dash`,
+        "All Covid Banner": `https://melloman.live/api/covid`
     });
 });
 

@@ -1,4 +1,4 @@
-const conn = require("../db/dbconfig");
+const pool = require("../db/dbconfig");
 
 const contactQueries = {
     table: "contact",
@@ -7,7 +7,7 @@ const contactQueries = {
         const person_last_name = req.body.person_last_name;
         const email = req.body.email;
         const message = req.body.message;
-        conn.query(
+        pool.query(
             `INSERT INTO contact (person_first_name, person_last_name, email, message) VALUES (?, ?, ?, ?)`,
             [person_first_name, person_last_name, email, message],
             (error, results) => {
