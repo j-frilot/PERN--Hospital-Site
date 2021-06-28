@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-const PhysicianResults = () => {
+const PhysicianResults = (props) => {
     const [allDoctors, setAllDoctors] = useState([]);
     const [inputBar, setInputBar] = useState("");
     const [filteredDoctor, setFilteredDoctor] = useState([]);
