@@ -50,6 +50,7 @@ CREATE TABLE physicians(
 );
 
 
+
 INSERT INTO physicians (first_name, last_name, suffix, specialty, photo, gender, telephone,education, office, info)
 VALUES  ('steven'   , 'santiago', 'M.D.', 'podiatry'                , 'face-1.jpg' , 'male'  , '257-852-6428', 'rock universiry',                   'e5954',  'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
         ('jan'      , 'sharp'   , 'M.D.', 'nephrology'              , 'face-2.jpg' , 'female', '459-821-4896', 'maine medical college',             'e694',   'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa molestiae illo laboriosam libero! Itaque unde ex eaque repellendus saepe rem et deleniti rerum nesciunt, aliquam nobis eligendi harum eum minima sed inventore asperiores officiis facilis perferendis quas fuga nostrum omnis dolorum. Odio eligendi ipsa consequatur exercitationem iure numquam aut aliquid.'),
