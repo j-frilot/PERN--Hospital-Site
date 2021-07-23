@@ -1,5 +1,5 @@
 require("dotenv").config();
-const mysql = require("mysql2");
+const Pool = require("pg").Pool;
 
 // // create the connection to database
 // const conn = mysql.createConnection({
