@@ -22,6 +22,10 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.get("/", (req, res) => {
+    res.send("<h1> This is for testing purposes only.</h1>");
+});
+
 // Port Environment variable
 const PORT = process.env.PORT || 4000;
 
