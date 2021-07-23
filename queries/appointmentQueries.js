@@ -3,7 +3,7 @@ const pool = require("../db/dbconfig");
 const appointmentQueries = {
     table: "appointments",
     apptdate: (res, table) => {
-        pool.execute(
+        pool.query(
             `SELECT appointment_date FROM appointments`,
             (error, results) => {
                 if (!error) {

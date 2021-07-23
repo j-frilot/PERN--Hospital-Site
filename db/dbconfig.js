@@ -9,7 +9,7 @@ const Pool = require("pg").Pool;
 //     database: process.env.DB_NAME
 // });
 
-const pool = mysql.createPool({
+const pool = new Pool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
@@ -18,10 +18,7 @@ const pool = mysql.createPool({
     connectionLimit: 100
 });
 
-pool.getConnection((err, connection) => {
-    if (err) {
-        console.log("CONNECTION ERROR!! Connection error message: ", err);
-    }
+pool.query("SELECT NOW()", (err, res) => {
     console.log("Oh yea, our connection is established!: ");
 });
 

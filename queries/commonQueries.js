@@ -6,7 +6,7 @@ const dashboardQueries = require("./dashboardQueries");
 
 const commonQueries = {
     findAll: (res, table) => {
-        pool.execute(`SELECT * FROM ${table}`, (error, results) => {
+        pool.query(`SELECT * FROM ${table}`, (error, results) => {
             if (!error) {
                 if (results.length == 1) {
                     res.json(...results);
