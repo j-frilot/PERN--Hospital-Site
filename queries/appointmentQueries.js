@@ -7,7 +7,7 @@ const appointmentQueries = {
             if (err) {
                 console.log("Appointment Date Query error!!!:", err);
             } else {
-                res.json(res);
+                console.log(res);
             }
         });
     },
@@ -39,7 +39,7 @@ const appointmentQueries = {
                 if (err) {
                     console.log("Make Appointment Query error!!!:", err);
                 } else {
-                    res.json(res);
+                    console.log(res);
                 }
             }
         );

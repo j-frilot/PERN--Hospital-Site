@@ -14,7 +14,7 @@ const contactQueries = {
                 if (err) {
                     console.log("Contact Us Query error!!!:", err);
                 } else {
-                    res.json(res);
+                    console.log(res);
                 }
             }
         );

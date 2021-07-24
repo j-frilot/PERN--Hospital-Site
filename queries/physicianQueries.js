@@ -10,7 +10,7 @@ const physicianQueries = {
                 if (err) {
                     console.log("Find by ID Query error!!!:", err);
                 } else {
-                    res.json(res);
+                    console.log(res);
                 }
             }
         );
@@ -24,7 +24,7 @@ const physicianQueries = {
                 if (err) {
                     console.log("Filter Names Query error!!!:", err);
                 } else {
-                    res.json(res);
+                    console.log(res);
                 }
             }
         );

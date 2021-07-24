@@ -10,7 +10,7 @@ const commonQueries = {
             if (err) {
                 console.log("Find all Query error!!!:", err);
             } else {
-                res.json(res);
+                console.log(res);
             }
         });
     }
