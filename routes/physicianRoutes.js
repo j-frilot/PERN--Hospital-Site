@@ -7,8 +7,12 @@ const db = require("../db/dbconfig");
 
 // all of the physicians  :3000/api/physicians
 router.get("/", async (req, res) => {
-    const allPhysicians = await db.query("SELECT * FROM physicians");
-    console.log(allPhysicians);
+    try {
+        const allPhysicians = await db.query("SELECT * FROM physicians");
+        res.json(allPhysicians);
+    } catch (err) {
+        console.error(err.message);
+    }
 
     // query.findAll(res, query.table);
 });
