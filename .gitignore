@@ -4,3 +4,4 @@ notes.html
 .git-old
 .DS_Store
 .pgnotes.txt
+.env
