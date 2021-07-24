@@ -3,22 +3,21 @@ const router = express.Router();
 // const { contactQueries: query } = require("../queries/Query");
 const db = require("../db/dbconfig");
 
+//--------------------------------------------------------------
+
 // contact-us    ${port}/api/contact-us
 router.get("/", async (req, res) => {
     try {
-        const findAll = await db.query(`SELECT * FROM contact`, (err, res) => {
-            if (err) {
-                console.log("Find all Query error!!!:", err);
-            } else {
-                console.log(res);
-            }
-        });
+        const findAllContacts = await db.query(`SELECT * FROM contact`);
+        res.json(findAllContacts);
     } catch (err) {
         console.error(err.message);
     }
 
     // query.findAll(res, query.table);
 });
+
+//--------------------------------------------------------------
 
 // ${port}/api/contact-us/send-message
 router.post("/send-message", async (req, res) => {
@@ -29,14 +28,7 @@ router.post("/send-message", async (req, res) => {
     try {
         const messages = await db.query(
             `INSERT INTO contact (person_first_name, person_last_name, email, message) VALUES (?, ?, ?, ?)`,
-            [person_first_name, person_last_name, email, message],
-            (error, results) => {
-                if (err) {
-                    console.log("Contact Us Query error!!!:", err);
-                } else {
-                    console.log(res);
-                }
-            }
+            [person_first_name, person_last_name, email, message]
         );
     } catch (err) {
         console.error(err.message);

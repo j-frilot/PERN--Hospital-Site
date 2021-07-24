@@ -3,19 +3,13 @@ const router = express.Router();
 // const { dashboardQueries: query } = require("../queries/Query");
 const db = require("../db/dbconfig");
 
+//--------------------------------------------------------------
+
 // /api/dash - DASHBOARD
 router.get("/", async (req, res) => {
     try {
-        const findAll = await db.query(
-            `SELECT * FROM dashboard`,
-            (err, res) => {
-                if (err) {
-                    console.log("Find all Query error!!!:", err);
-                } else {
-                    console.log(res);
-                }
-            }
-        );
+        const findAllDash = await db.query(`SELECT * FROM dashboard`);
+        res.json(findAllDash);
     } catch (err) {
         console.error(err.message);
     }
