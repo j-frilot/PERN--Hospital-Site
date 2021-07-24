@@ -9,6 +9,11 @@ const { Pool, Client } = require("pg");
 //     database: process.env.DB_NAME
 // });
 
+const client = new Client({
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
 const pool = new Pool();
 
 // const pool = new Pool({
