@@ -9,7 +9,7 @@ const db = require("../db/dbconfig");
 router.get("/", async (req, res) => {
     try {
         const findAllCovid = await db.query(`SELECT * FROM covid`);
-        res.json(findAllCovid);
+        res.json(findAllCovid.rows);
     } catch (err) {
         console.error(err.message);
     }

@@ -9,7 +9,7 @@ const db = require("../db/dbconfig");
 router.get("/", async (req, res) => {
     try {
         const allPhysicians = await db.query("SELECT * FROM physicians");
-        res.json(allPhysicians);
+        res.json(allPhysicians.rows);
     } catch (err) {
         console.error(err.message);
     }
@@ -26,7 +26,7 @@ router.get("/:id", async (req, res) => {
             `SELECT * FROM physicians WHERE physicians_id = ?`,
             [id]
         );
-        res.json(physicianId);
+        res.json(physicianId.rows);
     } catch (err) {
         console.error(err.message);
     }
@@ -43,7 +43,7 @@ router.get("/filter/:str", async (req, res) => {
             `SELECT *  FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE CONCAT('%', ? , '%'))`,
             [str, str]
         );
-        res.json(filter);
+        res.json(filter.rows);
     } catch (err) {
         console.error(err.message);
     }

@@ -9,7 +9,7 @@ const db = require("../db/dbconfig");
 router.get("/", async (req, res) => {
     try {
         const findAllContacts = await db.query(`SELECT * FROM contact`);
-        res.json(findAllContacts);
+        res.json(findAllContacts.rows);
     } catch (err) {
         console.error(err.message);
     }

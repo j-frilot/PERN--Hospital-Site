@@ -6,7 +6,10 @@ const db = require("../db/dbconfig");
 // appointments    ${port}/api/appointments
 router.get("/", async (req, res) => {
     try {
-        const findAll = await db.query(`SELECT * FROM appointments`);
+        const findAllAppointments = await db.query(
+            `SELECT * FROM appointments`
+        );
+        res.json(findAllAppointments.rows);
     } catch (err) {
         console.error(err.message);
     }
@@ -20,6 +23,7 @@ router.get("/apptdate", async (req, res) => {
         const apptDate = await db.query(
             `SELECT appointment_date FROM appointments`
         );
+        res.json(apptDate.rows);
     } catch (err) {
         console.error(err.message);
     }
