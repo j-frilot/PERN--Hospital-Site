@@ -1,38 +1,32 @@
-const pool = require("../db/dbconfig");
+const db = require("../db/dbconfig");
 
 const physicianQueries = {
     table: "physicians",
     findById: (res, table, id) => {
-        pool.query(
+        db.query(
             `SELECT * FROM physicians WHERE physicians_id = ?`,
             [id],
-            (error, results) => {
-                if (!error) {
-                    if (results.length == 1) {
-                        res.json(...results);
-                    } else {
-                        res.json(results);
-                    }
+            (err, res) => {
+                if (err) {
+                    return next(err);
+                    console.log("Find by ID Query error!!!:", err);
                 } else {
-                    console.log("Query Error", error);
+                    res.json(res);
                 }
             }
         );
     },
     table: "physicians",
     filterName: (res, str) => {
-        pool.query(
+        db.query(
             `SELECT *  FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE CONCAT('%', ? , '%'))`,
             [str, str],
-            (error, results) => {
-                if (!error) {
-                    if (results.length == 1) {
-                        res.json(...results);
-                    } else {
-                        res.json(results);
-                    }
+            (err, res) => {
+                if (err) {
+                    return next(err);
+                    console.log("Filter Names Query error!!!:", err);
                 } else {
-                    console.log("Query Error", error);
+                    res.json(res);
                 }
             }
         );

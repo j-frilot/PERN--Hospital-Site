@@ -1,22 +1,16 @@
-const pool = require("../db/dbconfig");
+const db = require("../db/dbconfig");
 
 const appointmentQueries = {
     table: "appointments",
     apptdate: (res, table) => {
-        pool.query(
-            `SELECT appointment_date FROM appointments`,
-            (error, results) => {
-                if (!error) {
-                    if (results.length == 1) {
-                        res.json(...results);
-                    } else {
-                        res.json(results);
-                    }
-                } else {
-                    console.log("Query Error", error);
-                }
+        db.query(`SELECT appointment_date FROM appointments`, (err, res) => {
+            if (err) {
+                return next(err);
+                console.log("Appointment Date Query error!!!:", err);
+            } else {
+                res.json(res);
             }
-        );
+        });
     },
     table: "appointments",
     makeAppointment: (req, res) => {
@@ -29,7 +23,7 @@ const appointmentQueries = {
         const comments = req.body.comments;
         const height = req.body.height;
         const weight = req.body.weight;
-        pool.query(
+        db.query(
             `INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [
                 patient_first_name,
@@ -42,15 +36,12 @@ const appointmentQueries = {
                 height,
                 weight
             ],
-            (error, results) => {
-                if (!error) {
-                    if (results.length == 1) {
-                        res.json(...results);
-                    } else {
-                        res.json(results);
-                    }
+            (err, res) => {
+                if (err) {
+                    return next(err);
+                    console.log("Make Appointment Query error!!!:", err);
                 } else {
-                    console.log("Query Error", error);
+                    res.json(res);
                 }
             }
         );

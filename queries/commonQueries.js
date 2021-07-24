@@ -1,4 +1,4 @@
-const pool = require("../db/dbconfig");
+const db = require("../db/dbconfig");
 const physicianQueries = require("./physicianQueries");
 const appoinmentQueries = require("./appointmentQueries");
 const covidQueries = require("./covidQueries");
@@ -6,16 +6,12 @@ const dashboardQueries = require("./dashboardQueries");
 
 const commonQueries = {
     findAll: (res, table) => {
-        pool.query(`SELECT * FROM ${table}`, (error, results) => {
-            if (!error) {
-                if (results.length == 1) {
-                    res.json(...results);
-                    res.render(...results);
-                } else {
-                    res.json(results);
-                }
+        db.query(`SELECT * FROM ${table}`, (err, res) => {
+            if (err) {
+                return next(err);
+                console.log("Find all Query error!!!:", err);
             } else {
-                console.log("Query Error", error);
+                res.json(res);
             }
         });
     }

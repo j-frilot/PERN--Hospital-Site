@@ -1,4 +1,4 @@
-const pool = require("../db/dbconfig");
+const db = require("../db/dbconfig");
 
 const dashboardQueries = {
     table: "dashboard"
