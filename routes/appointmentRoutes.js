@@ -6,16 +6,7 @@ const db = require("../db/dbconfig");
 // appointments    ${port}/api/appointments
 router.get("/", async (req, res) => {
     try {
-        const findAll = await db.query(
-            `SELECT * FROM appointments`,
-            (err, res) => {
-                if (err) {
-                    console.log("Find all Query error!!!:", err);
-                } else {
-                    console.log(res);
-                }
-            }
-        );
+        const findAll = await db.query(`SELECT * FROM appointments`);
     } catch (err) {
         console.error(err.message);
     }
@@ -28,14 +19,7 @@ router.get("/", async (req, res) => {
 router.get("/apptdate", async (req, res) => {
     try {
         const apptDate = await db.query(
-            `SELECT appointment_date FROM appointments`,
-            (err, res) => {
-                if (err) {
-                    console.log("Appointment Date Query error!!!:", err);
-                } else {
-                    console.log(res);
-                }
-            }
+            `SELECT appointment_date FROM appointments`
         );
     } catch (err) {
         console.error(err.message);
