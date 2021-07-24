@@ -10,7 +10,6 @@ router.get("/", async (req, res) => {
     } catch (err) {
         console.error(err.message);
     }
-
     // query.findAll(res, query.table);
 });
 
