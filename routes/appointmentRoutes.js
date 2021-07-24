@@ -5,13 +5,20 @@ const db = require("../db/dbconfig");
 
 // appointments    ${port}/api/appointments
 router.get("/", async (req, res) => {
-    const findAll = await db.query(`SELECT * FROM appointments`, (err, res) => {
-        if (err) {
-            console.log("Find all Query error!!!:", err);
-        } else {
-            console.log(res);
-        }
-    });
+    try {
+        const findAll = await db.query(
+            `SELECT * FROM appointments`,
+            (err, res) => {
+                if (err) {
+                    console.log("Find all Query error!!!:", err);
+                } else {
+                    console.log(res);
+                }
+            }
+        );
+    } catch (err) {
+        console.error(err.message);
+    }
 
     // query.findAll(res, query.table);
 });
@@ -19,16 +26,20 @@ router.get("/", async (req, res) => {
 // show appointments in desc order
 // /appointments/apptdate
 router.get("/apptdate", async (req, res) => {
-    const apptDate = await db.query(
-        `SELECT appointment_date FROM appointments`,
-        (err, res) => {
-            if (err) {
-                console.log("Appointment Date Query error!!!:", err);
-            } else {
-                console.log(res);
+    try {
+        const apptDate = await db.query(
+            `SELECT appointment_date FROM appointments`,
+            (err, res) => {
+                if (err) {
+                    console.log("Appointment Date Query error!!!:", err);
+                } else {
+                    console.log(res);
+                }
             }
-        }
-    );
+        );
+    } catch (err) {
+        console.error(err.message);
+    }
 
     // query.apptdate(res, query.table);
 });
@@ -44,27 +55,31 @@ router.post("/makeAppointment", async (req, res) => {
     const comments = req.body.comments;
     const height = req.body.height;
     const weight = req.body.weight;
-    const makeAppointment = await db.query(
-        `INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [
-            patient_first_name,
-            patient_last_name,
-            physicians_id,
-            appointment_date,
-            insurance,
-            telephone,
-            comments,
-            height,
-            weight
-        ],
-        (err, res) => {
-            if (err) {
-                console.log("Make Appointment Query error!!!:", err);
-            } else {
-                console.log(res);
+    try {
+        const makeAppointment = await db.query(
+            `INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [
+                patient_first_name,
+                patient_last_name,
+                physicians_id,
+                appointment_date,
+                insurance,
+                telephone,
+                comments,
+                height,
+                weight
+            ],
+            (err, res) => {
+                if (err) {
+                    console.log("Make Appointment Query error!!!:", err);
+                } else {
+                    console.log(res);
+                }
             }
-        }
-    );
+        );
+    } catch (err) {
+        console.error(err.message);
+    }
 
     // query.makeAppointment(req, res);
 });

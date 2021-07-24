@@ -3,9 +3,9 @@ const router = express.Router();
 // const { physicianQueries: query } = require("../queries/Query");
 const db = require("../db/dbconfig");
 
-//    3000/api/physicians
+//--------------------------------------------------------------
 
-// all of the physicians  :3000/api/physicians
+// /api/physicians - ALL PHYSICIANS
 router.get("/", async (req, res) => {
     try {
         const allPhysicians = await db.query("SELECT * FROM physicians");
@@ -17,23 +17,36 @@ router.get("/", async (req, res) => {
     // query.findAll(res, query.table);
 });
 
-// find by id  ${PORT}api/physicians/5
+//--------------------------------------------------------------
+
+// /api/physicians/:id - PHYSICIAN ID
 router.get("/:id", async (req, res) => {
-    const physicianId = await db.query(
-        `SELECT * FROM physicians WHERE physicians_id = ?`,
-        [id]
-    );
-    console.log(physicianId);
+    try {
+        const physicianId = await db.query(
+            `SELECT * FROM physicians WHERE physicians_id = ?`,
+            [id]
+        );
+        res.json(physicianId);
+    } catch (err) {
+        console.error(err.message);
+    }
+
     // query.findById(res, query.table, req.params.id);
 });
 
-// filter names  ${PORT/api/physicians/filter/'letters'
+//--------------------------------------------------------------
+
+// /api/physicians/filter/'letters' - FILTER PHYSICIANS
 router.get("/filter/:str", async (req, res) => {
-    const filter = await db.query(
-        `SELECT *  FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE CONCAT('%', ? , '%'))`,
-        [str, str]
-    );
-    console.log(filter);
+    try {
+        const filter = await db.query(
+            `SELECT *  FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE CONCAT('%', ? , '%'))`,
+            [str, str]
+        );
+        res.json(filter);
+    } catch (err) {
+        console.error(err.message);
+    }
 
     // query.filterName(res, req.params.str);
 });
