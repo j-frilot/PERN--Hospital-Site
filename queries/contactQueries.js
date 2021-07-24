@@ -12,7 +12,6 @@ const contactQueries = {
             [person_first_name, person_last_name, email, message],
             (error, results) => {
                 if (err) {
-                    return next(err);
                     console.log("Contact Us Query error!!!:", err);
                 } else {
                     res.json(res);

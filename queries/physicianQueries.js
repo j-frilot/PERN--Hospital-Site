@@ -8,7 +8,6 @@ const physicianQueries = {
             [id],
             (err, res) => {
                 if (err) {
-                    return next(err);
                     console.log("Find by ID Query error!!!:", err);
                 } else {
                     res.json(res);
@@ -23,7 +22,6 @@ const physicianQueries = {
             [str, str],
             (err, res) => {
                 if (err) {
-                    return next(err);
                     console.log("Filter Names Query error!!!:", err);
                 } else {
                     res.json(res);

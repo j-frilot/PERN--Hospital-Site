@@ -5,7 +5,6 @@ const appointmentQueries = {
     apptdate: (res, table) => {
         db.query(`SELECT appointment_date FROM appointments`, (err, res) => {
             if (err) {
-                return next(err);
                 console.log("Appointment Date Query error!!!:", err);
             } else {
                 res.json(res);
@@ -38,7 +37,6 @@ const appointmentQueries = {
             ],
             (err, res) => {
                 if (err) {
-                    return next(err);
                     console.log("Make Appointment Query error!!!:", err);
                 } else {
                     res.json(res);
