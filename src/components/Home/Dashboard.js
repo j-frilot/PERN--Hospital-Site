@@ -5,12 +5,13 @@ const Dashboard = () => {
     const [dashboard, setDashboard] = useState([]);
 
     useEffect(() => {
-        fetch("https://melloman.live/api/dash")
+        fetch("https://covid-hospital-api.herokuapp.com/api/dash")
             .then((res) => res.json())
             .then((res) => {
                 setDashboard(res);
             });
     }, []);
+
     return (
         <section className="dashboard dashboard-card container">
             {dashboard.map((dash) => (

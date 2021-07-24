@@ -7,7 +7,7 @@ const PhysicianResults = (props) => {
     const [filteredDoctor, setFilteredDoctor] = useState([]);
 
     useEffect(() => {
-        fetch(`https://melloman.live/api/physicians/`)
+        fetch(`  https://covid-hospital-api.herokuapp.com/api/physicians`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response);

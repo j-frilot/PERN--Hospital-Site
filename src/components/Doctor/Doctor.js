@@ -8,7 +8,7 @@ const Doctor = () => {
 
     const { id } = useParams();
     useEffect(() => {
-        fetch(`https://melloman.live/api/physicians/${id}`)
+        fetch(`  https://covid-hospital-api.herokuapp.com/api/physicians/${id}`)
             .then((response) => response.json())
             .then((response) => {
                 console.log(response);
