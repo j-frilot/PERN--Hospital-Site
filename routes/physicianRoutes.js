@@ -33,4 +33,9 @@ router.get("/filter/:str", async (req, res) => {
 
     // query.filterName(res, req.params.str);
 });
+
+// `SELECT *  FROM physicians WHERE first_name LIKE CONCAT('%',?,'%')`,
+// SELECT first_name, last_name FROM physicians WHERE (first_name LIKE '%w%') OR (last_name LIKE '%w%')
+// `SELECT first_name, last_name FROM physicians WHERE (first_name LIKE CONCAT('%', ? , '%')) OR (last_name LIKE // CONCAT('%', ? , '%'))`,
+
 module.exports = router;

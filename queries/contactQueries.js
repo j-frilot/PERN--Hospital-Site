@@ -2,7 +2,7 @@ const db = require("../db/dbconfig");
 
 const contactQueries = {
     table: "contact",
-    messageus: (req, res) => {
+    messages: (req, res) => {
         const person_first_name = req.body.person_first_name;
         const person_last_name = req.body.person_last_name;
         const email = req.body.email;
