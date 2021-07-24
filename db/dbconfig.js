@@ -1,5 +1,5 @@
 require("dotenv").config();
-const { Pool } = require("pg");
+const { Pool, Client } = require("pg");
 
 // // create the connection to database
 // const conn = mysql.createConnection({
@@ -9,14 +9,16 @@ const { Pool } = require("pg");
 //     database: process.env.DB_NAME
 // });
 
-const pool = new Pool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
-    connectionLimit: 100
-});
+const pool = new Pool();
+
+// const pool = new Pool({
+//     host: process.env.DB_HOST,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASS,
+//     database: process.env.DB_NAME,
+//     port: process.env.DB_PORT,
+//     connectionLimit: 100
+// });
 
 pool.query("SELECT NOW()", (err, res) => {
     console.log("Oh yea, our connection is established!: ");
