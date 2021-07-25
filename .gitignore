@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 node_modules
 package-lock.json
 notes.html
@@ -5,3 +6,66 @@ notes.html
 .DS_Store
 .pgnotes.txt
 .env
+=======
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+package-lock.json
+# testing
+/coverage
+
+# production
+
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+build 
+/build
+./build
+# Local Netlify folder
+.netlify
+>>>>>>> 671cad809c847fdd2a63e9201d63e0f40f9965df
+
+
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+########### CLIENT ##########
+/node_modules
+/.pnp
+.pnp.js
+package-lock.json
+# testing
+/coverage
+
+# production
+build
+/build
+./build 
+
+# Local Netlify folder
+.netlify
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
