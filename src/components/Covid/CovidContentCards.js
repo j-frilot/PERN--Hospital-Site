@@ -2,16 +2,6 @@ import React from "react";
 import covidContentCardData from "./covidContentCardData";
 
 const CovidContentCards = () => {
-    // const [covidContent, setCovidContent] = useState([]);
-    // useEffect(() => {
-    //     fetch("http://localhost:5000/api/covid")
-    //         .then((response) => response.json())
-    //         .then((response) => {
-    //             console.log(response);
-    //             setCovidContent(response);
-    //         });
-    // }, []);
-
     return (
         <section className="covid-content">
             <div className=" module covid-content-section">
