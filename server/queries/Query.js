@@ -1,34 +1,34 @@
-// const commonQueries = require("./commonQueries");
+const commonQueries = require('./commonQueries');
 
-// const physicianQueries = {
-//     ...commonQueries,
-//     ...require("./physicianQueries")
-// };
+const physicianQueries = {
+	...commonQueries,
+	...require('./physicianQueries'),
+};
 
-// const appointmentQueries = {
-//     ...commonQueries,
-//     ...require("./appointmentQueries")
-// };
+const appointmentQueries = {
+	...commonQueries,
+	...require('./appointmentQueries'),
+};
 
-// const dashboardQueries = {
-//     ...commonQueries,
-//     ...require("./dashboardQueries")
-// };
+const dashboardQueries = {
+	...commonQueries,
+	...require('./dashboardQueries'),
+};
 
-// const covidQueries = {
-//     ...commonQueries,
-//     ...require("./covidQueries")
-// };
+const covidQueries = {
+	...commonQueries,
+	...require('./covidQueries'),
+};
 
-// const contactQueries = {
-//     ...commonQueries,
-//     ...require("./contactQueries")
-// };
+const contactQueries = {
+	...commonQueries,
+	...require('./contactQueries'),
+};
 
-// module.exports = {
-//     physicianQueries,
-//     appointmentQueries,
-//     dashboardQueries,
-//     covidQueries,
-//     contactQueries
-// };
+module.exports = {
+	physicianQueries,
+	appointmentQueries,
+	dashboardQueries,
+	covidQueries,
+	contactQueries,
+};

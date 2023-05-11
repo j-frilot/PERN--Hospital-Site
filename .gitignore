@@ -22,3 +22,4 @@ build
 /build
 ./build
 .netlify
+config.env
