@@ -28,7 +28,7 @@ const AppointmentForm = () => {
 			weight
 		);
 
-		fetch('  http://localhost:4000/api/appointments/makeappointment/', {
+		fetch('http://localhost:4000/api/appointments/makeAppointment', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

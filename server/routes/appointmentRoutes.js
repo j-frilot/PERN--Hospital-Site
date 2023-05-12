@@ -17,56 +17,42 @@ router.get('/', (req, res) => {
 // show appointments in desc order
 // /appointments/apptdate
 router.get('/apptdate', async (req, res) => {
-	try {
-		const apptDate = await db.query(
-			`SELECT appointment_date FROM appointments`
-		);
-		res.json(apptDate.rows);
-	} catch (err) {
+	await db.query(`SELECT appointment_date FROM appointments`);
+	res.json(apptDate.rows);
+	if (err) {
 		console.error(err.message);
 	}
-
-	query.apptdate(res, query.table);
 });
 
 // appointments
 router.post('/makeAppointment', async (req, res) => {
-	const patient_first_name = req.body.patient_first_name;
-	const patient_last_name = req.body.patient_last_name;
-	const physicians_id = req.body.physicians_id;
-	const appointment_date = req.body.appointment_date;
-	const insurance = req.body.insurance;
-	const telephone = req.body.telephone;
-	const comments = req.body.comments;
-	const height = req.body.height;
-	const weight = req.body.weight;
-	try {
-		const makeAppointment = await db.query(
-			`INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-			[
-				patient_first_name,
-				patient_last_name,
-				physicians_id,
-				appointment_date,
-				insurance,
-				telephone,
-				comments,
-				height,
-				weight,
-			],
-			(err, res) => {
-				if (err) {
-					console.log('Make Appointment Query error!!!:', err);
-				} else {
-					console.log(res);
-				}
+	console.log(req.body);
+	await db.query(
+		`INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+		[
+			req.body.patient_first_name,
+			req.body.patient_last_name,
+			req.body.physicians_id,
+			req.body.appointment_date,
+			req.body.insurance,
+			req.body.telephone,
+			req.body.comments,
+			req.body.height,
+			req.body.weight,
+		],
+		(err, res) => {
+			if (err) {
+				console.log('Make Appointment Query error!!!:', err);
+			} else {
+				console.log(res);
 			}
-		);
-	} catch (err) {
+		}
+	);
+	if (err) {
 		console.error(err.message);
 	}
 
-	query.makeAppointment(req, res);
+	// query.makeAppointment(req, res);
 });
 
 module.exports = router;

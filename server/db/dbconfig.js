@@ -3,14 +3,14 @@ const mysql = require('mysql2');
 
 // create the connection to database
 const connection = mysql.createConnection({
-	host: 'host',
-	user: 'user',
-	database: 'database',
+	host: 'localhost',
+	user: 'josh',
+	database: 'hospital',
 	password: 'PASSWORD',
 });
 
 // simple query
-connection.query('SELECT * FROM `DASHBOARD`', function (err) {
+connection.query('SELECT * FROM `dashboard`', function (err) {
 	if (!err) {
 		console.log('The hospital database connection was successful!!');
 	}

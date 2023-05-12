@@ -11,14 +11,14 @@ const PORT = process.env.PORT || 4000;
 // 	});
 // });
 
-router.get('/', (req, res) => {
-	res.json({
-		'All Physicians': `https://localhost:{PORT}/api/physicians`,
-		'All Appointments': `http://localhost:{PORT}/api/appointments`,
-		Dashboard: `http://localhost:{PORT}/api/dash`,
-		'All Covid Banner': `http://localhost:{PORT}/api/covid`,
-	});
-});
+// router.get('/', (req, res) => {
+// 	res.json({
+// 		'All Physicians': `https://localhost:{PORT}/api/physicians`,
+// 		'All Appointments': `http://localhost:{PORT}/api/appointments`,
+// 		Dashboard: `http://localhost:{PORT}/api/dash`,
+// 		'All Covid Banner': `http://localhost:{PORT}/api/covid`,
+// 	});
+// });
 
 // original
 router.use('/physicians', require('./routes/physicianRoutes'));
