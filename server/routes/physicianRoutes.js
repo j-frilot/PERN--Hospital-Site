@@ -1,20 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const { physicianQueries: query } = require('../queries/Query');
+// const { physicianQueries: query } = require('../queries/Query');
 const db = require('../db/dbconfig');
 
 //--------------------------------------------------------------
 
-// /api/physicians - ALL PHYSICIANS
-router.get('/', async (req, res) => {
-	try {
-		const allPhysicians = await db.query('SELECT * FROM physicians');
-		res.json(allPhysicians.rows);
-	} catch (err) {
-		console.error(err.message);
-	}
-
-	query.findAll(res, query.table);
+router.get('/', (req, res) => {
+	db.query('SELECT * FROM physicians', (err, results) => {
+		if (!err) {
+			res.send(results);
+		} else {
+			console.log('error man:', err);
+		}
+	});
 });
 
 //--------------------------------------------------------------

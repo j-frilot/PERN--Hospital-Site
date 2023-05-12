@@ -1,20 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const { contactQueries: query } = require('../queries/Query');
+// const { contactQueries: query } = require('../queries/Query');
 const db = require('../db/dbconfig');
 
 //--------------------------------------------------------------
 
 // contact-us    ${port}/api/contact-us
-router.get('/', async (req, res) => {
-	try {
-		const findAllContacts = await db.query(`SELECT * FROM contact`);
-		res.json(findAllContacts.rows);
-	} catch (err) {
-		console.error(err.message);
-	}
-
-	query.findAll(res, query.table);
+router.get('/', (req, res) => {
+	db.query('SELECT * FROM contact', (err, results) => {
+		if (!err) {
+			res.send(results);
+		} else {
+			console.log('error man:', err);
+		}
+	});
 });
 
 //--------------------------------------------------------------

@@ -1,19 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { appointmentQueries: query } = require('../queries/Query');
+// const { appointmentQueries: query } = require('../queries/Query');
 const db = require('../db/dbconfig');
 
 // appointments    ${port}/api/appointments
-router.get('/', async (req, res) => {
-	try {
-		const findAllAppointments = await db.query(
-			`SELECT * FROM appointments`
-		);
-		res.json(findAllAppointments.rows);
-	} catch (err) {
-		console.error(err.message);
-	}
-	// query.findAll(res, query.table);
+router.get('/', (req, res) => {
+	db.query('SELECT * FROM appointments', (err, results) => {
+		if (!err) {
+			res.send(results);
+		} else {
+			console.log('error man:', err);
+		}
+	});
 });
 
 // show appointments in desc order
