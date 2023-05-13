@@ -18,18 +18,20 @@ router.get('/', (req, res) => {
 //--------------------------------------------------------------
 
 // /api/physicians/:id - PHYSICIAN ID
-router.get('/:id', async (req, res) => {
-	try {
-		const physicianId = await db.query(
-			`SELECT * FROM physicians WHERE physicians_id = ?`,
-			[id]
-		);
-		res.json(physicianId.rows);
-	} catch (err) {
-		console.error(err.message);
-	}
-
-	// query.findById(res, query.table, req.params.id);
+router.get('/:id', (req, res) => {
+	const id = req.params.id;
+	db.query(
+		`SELECT * FROM physicians WHERE physicians_id = ?`,
+		[id],
+		(err, results) => {
+			if (err) {
+				console.log('GET Request ERROR!!!:', err);
+			} else {
+				console.log('GET Request SUCCESS!:', results[0]);
+				res.send(results[0]);
+			}
+		}
+	);
 });
 
 //--------------------------------------------------------------

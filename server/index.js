@@ -10,8 +10,6 @@ app.use(helmet());
 app.use(cors());
 app.use(express.static('public'));
 
-app.use('/api', router);
-
 // parse incoming traditional HTML form submits
 app.use(express.urlencoded({ extended: false }));
 
@@ -27,6 +25,8 @@ app.use(function (req, res, next) {
 	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 	next();
 });
+
+app.use('/api', router);
 
 app.get('/', (req, res) => {
 	res.send('<h1> This is for testing purposes only.</h1>');

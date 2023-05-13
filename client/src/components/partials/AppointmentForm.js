@@ -13,7 +13,7 @@ const AppointmentForm = () => {
 
 	//function from submit button to initiate the form
 	const displayInfo = (event) => {
-		event.preventDefault();
+		// event.preventDefault();
 
 		console.log(
 			//testing
@@ -52,6 +52,7 @@ const AppointmentForm = () => {
 			.catch((error) => {
 				console.error('Error:', error);
 			});
+		alert('Submitted!');
 	};
 
 	// Setting name from api and using .map() to use in the physician dropdown box.
@@ -108,7 +109,8 @@ const AppointmentForm = () => {
 											value={aName.physicians_id}
 										>
 											Dr. {aName.first_name}{' '}
-											{aName.last_name} {aName.suffix}
+											{aName.last_name} {aName.suffix} (
+											{aName.specialty})
 										</option>
 									))}
 								</optgroup>

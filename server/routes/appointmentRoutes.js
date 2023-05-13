@@ -25,34 +25,40 @@ router.get('/apptdate', async (req, res) => {
 });
 
 // appointments
-router.post('/makeAppointment', async (req, res) => {
-	console.log(req.body);
-	await db.query(
+router.post('/makeAppointment', (req, res) => {
+	console.log('Line 29:', req.body);
+
+	const patient_first_name = req.body.patient_first_name;
+	const patient_last_name = req.body.patient_last_name;
+	const physicians_id = req.body.physicians_id;
+	const appointment_date = req.body.appointment_date;
+	const insurance = req.body.insurance;
+	const telephone = req.body.telephone;
+	const comments = req.body.comments;
+	const height = req.body.height;
+	const weight = req.body.weight;
+
+	db.query(
 		`INSERT INTO appointments (patient_first_name, patient_last_name, physicians_id, appointment_date, insurance, telephone, comments, height, weight) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
 		[
-			req.body.patient_first_name,
-			req.body.patient_last_name,
-			req.body.physicians_id,
-			req.body.appointment_date,
-			req.body.insurance,
-			req.body.telephone,
-			req.body.comments,
-			req.body.height,
-			req.body.weight,
+			patient_first_name,
+			patient_last_name,
+			physicians_id,
+			appointment_date,
+			insurance,
+			telephone,
+			comments,
+			height,
+			weight,
 		],
 		(err, res) => {
 			if (err) {
-				console.log('Make Appointment Query error!!!:', err);
+				console.log('POST Request ERROR!!!:', err);
 			} else {
-				console.log(res);
+				console.log('POST Request SUCCESS!:', res);
 			}
 		}
 	);
-	if (err) {
-		console.error(err.message);
-	}
-
-	// query.makeAppointment(req, res);
 });
 
 module.exports = router;
