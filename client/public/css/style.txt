@@ -1,0 +1,131 @@
+
+:root {
+	--main-color: #01264d;
+	--accent-color: #184981;
+	--bg-light: #eee;
+	--font-light: #eee;
+	--shadow: 0 4px 8px 0 rgba(0, 0, 0, 50%);
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 1.8;
+	background-color: whitesmoke;
+}
+
+.btn {
+	padding: 5px 20px;
+	outline: none;
+	border: none;
+	color: var(--font-light);
+	background-color: var(--main-color);
+}
+
+.bold {
+	margin: auto;
+	font-weight: 900;
+	text-decoration: underline;
+}
+
+.hr {
+	margin: 20px auto;
+	width: 85%;
+	border: solid 1px var(--main-color);
+}
+
+.module {
+	padding: 1.5rem;
+	color: var(--main-color);
+	border-radius: 0.5rem;
+	background-color: var(--bg-light);
+	box-shadow: var(--shadow);
+}
+
+
+
+
+
+/* ===========================================*/
+/* ================= PHYSICIANS ==============*/
+/* ===========================================*/
+
+/* ---------------Banner------------- */
+.banner-container {
+	position: relative;
+	height: 500px;
+	width: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('/public/images/banner-3.jpg');
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.physicians-banner-body h2 {
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+	color: var(--font-light);
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+/* -----------form end-------- */
+
+.directory .results-ul {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	/* gap: 3rem; */
+}
+
+.directory .results-item {
+	margin: 2rem;
+	display: list-item;
+}
+.directory .results-item-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.directory .results-item-img {
+	text-align: center;
+}
+.directory .results-item-img img {
+	width: auto;
+	height: 250px;
+	vertical-align: middle;
+}
+
+.directory .results-item-info {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	font-family: granjon;
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 1.25rem;
+	color: var(--accent-color);
+}
+
+.directory .results-item-info .info-body {
+	display: flex;
+	flex-direction: column;
+}
+
+.directory .results-item-info .info-heading {
+	font-weight: normal;
+	font-size: 2.25rem;
+}
+
+.search {
+	text-align: center;
+}

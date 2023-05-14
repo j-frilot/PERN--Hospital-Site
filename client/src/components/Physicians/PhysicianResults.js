@@ -28,7 +28,7 @@ const PhysicianResults = (props) => {
 	return (
 		<>
 			<section className="filter">
-				<form className="container form-container">
+				<form className="w-10/12 form-container">
 					<input
 						type="text"
 						className="form-input"
@@ -39,30 +39,31 @@ const PhysicianResults = (props) => {
 			</section>
 
 			<section className="results">
-				<ul className="results-ul">
+				<ul className="results-ul grid grid-cols-3">
 					{filteredDoctor.map((result) => (
 						<li
-							className="module results-item"
+							className="module results-item m-8 p-6 text-indigo-950 rounded-lg bg-gray-200 shadow-md"
 							key={result.physicians_id}
 						>
 							<NavLink
-								className="results-item-flex"
+								className="results-item-flex flex flex-col align-center"
 								to={`/physicians/${result.physicians_id}`}
 							>
 								<div className="results-item-img">
 									<img
 										src={`images/${result.photo}`}
 										alt="physician"
-										className="physician-img"
+										className="physician-img w-auto align-middle"
+										style={{ height: '250px' }}
 									/>
 								</div>
-								<div className="results-item-info ">
-									<span className="info-heading">
+								<div className="results-item-info flex flex-col p-4 capitalize font-bold text-lg ">
+									<span className="info-heading ">
 										{result.first_name} {result.last_name}{' '}
 										{result.suffix}
 									</span>
 
-									<span className="info-body">
+									<span className="info-body flex flex-col font-normal">
 										<p>{result.specialty}</p>
 										<p className="bg">
 											Request An Appointment

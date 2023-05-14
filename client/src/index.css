@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CUSTOM */
+.btn {
+	padding: 5px 20px;
+	outline: none;
+	border: none;
+	color: var(--font-light);
+	background-color: var(--main-color);
+}
+
+.hr {
+	margin: 20px auto;
+	width: 85%;
+	border: solid 1px var(--main-color);
+}
+
+/* .module {
+	padding: 1.5rem;
+	color: var(--main-color);
+	border-radius: 0.5rem;
+	background-color: var(--bg-light);
+	box-shadow: var(--shadow);
+} */
+
+/********** HOME ************/
+
+.hero {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('/public/images/banner-1.jpg');
+	height: 700px;
+}
+
+.hero-content {
+	transform: translate(-50%, -50%);
+}
+
+/********** PHYSICIANS  **********/
+
+.banner-container {
+	height: 500px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('/public/images/banner-3.jpg');
+}
+
+/********** COVID  **********/
+
+.covid-banner .covid-banner-asset .covid-banner-img {
+	background-image: url('/public/images/coronavirus.jpg');
+}
+
+.covid-content .image {
+	background-image: url('/public/images/covid-img-2.jpg');
+}
+
+/********** FORM  **********/
+
+.form-container {
+	/* max-width: 500px; */
+	margin: 0.75rem auto;
+}
+
+.form-container fieldset {
+	border: none;
+}
+.form-container legend {
+	margin-bottom: 0.75rem;
+	font-size: 1.5rem;
+}
+
+.form-container label {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+.form-container input[type='text'],
+.form-container input[type='date'],
+.form-container input[type='datetime'],
+.form-container input[type='number'],
+.form-container input[type='tel'],
+.form-container input[type='email'],
+.form-container textarea,
+.form-container select {
+	width: 100%;
+	border: none;
+	border-radius: 0.5rem;
+	margin: 0 0 2rem 0;
+	padding: 0.75rem;
+	font-size: 1rem;
+	outline: 0;
+	color: var(--accent-color);
+	text-transform: capitalize;
+}
+.form-container input[type='text']:focus,
+.form-container input[type='date']:focus,
+.form-container input[type='datetime']:focus,
+.form-container input[type='email']:focus,
+.form-container input[type='number']:focus,
+.form-container input[type='search']:focus,
+.form-container input[type='time']:focus,
+.form-container input[type='url']:focus,
+.form-container input[type='tel']:focus,
+.form-container input[type='email']:focus,
+.form-container input[type='select']:focus,
+.form-container textarea:focus,
+.form-container select:focus {
+	background: #ddd;
+}
+
+.form-container input[type='submit'],
+.form-container input[type='button'] {
+	position: relative;
+	display: block;
+	width: 100%;
+	border: none;
+	margin: auto 0.75rem auto 0;
+	padding: 1.4rem 2.75rem;
+	font-size: 1.4rem;
+	text-align: center;
+	color: var(--font-light);
+	background: var(--accent-color);
+	border-radius: 0.5rem;
+}
+.form-container input[type='submit']:hover,
+.form-container input[type='button']:hover {
+	background: var(--main-color);
+	cursor: pointer;
+}

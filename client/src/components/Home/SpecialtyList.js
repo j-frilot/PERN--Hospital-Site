@@ -11,8 +11,8 @@ const SpecialtyList = () => {
 	}, []);
 
 	return (
-		<section className="specialties container">
-			<div className="specialties-heading d-flex flex-column align-items-center">
+		<section className="specialties w-10/12 mx-auto my-4">
+			<div className="specialties-heading py-4 px-0">
 				<h2>Our Specialties</h2>
 				<p>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -20,16 +20,16 @@ const SpecialtyList = () => {
 				</p>
 			</div>
 
-			<div className="specialties-grid">
+			<div className="specialties-grid flex flex-wrap justify-evenly align-center py-4">
 				{specialties.slice(0, 6).map((specialty) => (
 					<div
 						key={specialty.physicians_id}
-						className="module specialties-grid-item"
+						className="module specialties-grid-item font-bold text-center uppercase"
 					>
 						<img
 							src={`images/${specialty.photo}`}
 							alt="physician"
-							className="physician-img"
+							className="physician-img w-36"
 						/>
 						<p>{specialty.specialty}</p>
 					</div>
