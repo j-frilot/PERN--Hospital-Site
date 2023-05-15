@@ -15,39 +15,27 @@ const CovidStatBanner = () => {
 	const humanDateFormat = dateObject.toLocaleString();
 
 	return (
-		<section className="covid-stat-banner m-auto p-8 text-center text-indigo-950">
-			<div className="covid-stat-card-row flex flex-wrap justify-around text-center text-indigo-950">
-				<div className="module card card-cases m-1 p-6 text-indigo-950 rounded-lg shadow-md bg-gray-200">
-					<p className="card-cases-heading text-2xl">Total Cases:</p>
-					<p className="card-cases-body text-2xl font-semibold">
-						{' '}
-						{stats.cases}
-					</p>
+		<section className="container covid-stat-banner">
+			<div className="covid-stat-card-row">
+				<div className="module card card-cases">
+					<p className="card-cases-heading">Total Cases:</p>
+					<p className="card-cases-body"> {stats.cases}</p>
 				</div>
-				<div className="module card card-cases m-1 p-6 text-indigo-950 rounded-lg shadow-md bg-gray-200">
-					<p className="card-cases-heading text-2xl">Total Deaths:</p>
-					<p className="card-cases-body text-2xl font-semibold">
-						{' '}
-						{stats.deaths}
-					</p>
+				<div className="module card card-cases">
+					<p className="card-cases-heading">Total Deaths:</p>
+					<p className="card-cases-body"> {stats.deaths}</p>
 				</div>
-				<div className="module card card-cases m-1 p-6 text-indigo-950 rounded-lg shadow-md bg-gray-200">
-					<p className="card-cases-heading text-2xl">Active Cases:</p>
-					<p className="card-cases-body text-2xl font-semibold">
-						{stats.active}
-					</p>
+				<div className="module card card-cases">
+					<p className="card-cases-heading">Active Cases:</p>
+					<p className="card-cases-body">{stats.active}</p>
 				</div>
-				<div className="module card card-cases m-1 p-6 text-indigo-950 rounded-lg shadow-md bg-gray-200">
-					<p className="card-cases-heading text-2xl">New Cases:</p>
-					<p className="card-cases-body text-2xl font-semibold">
-						{stats.todayCases}
-					</p>
+				<div className="module card card-cases">
+					<p className="card-cases-heading">New Cases:</p>
+					<p className="card-cases-body">{stats.todayCases}</p>
 				</div>
-				<div className="module card card-cases m-1 p-6 text-indigo-950 rounded-lg shadow-md bg-gray-200">
-					<p className="card-cases-heading text-2xl">New Deaths:</p>
-					<p className="card-cases-body text-2xl font-semibold">
-						{stats.todayDeaths}
-					</p>
+				<div className="module card card-cases">
+					<p className="card-cases-heading">New Deaths:</p>
+					<p className="card-cases-body">{stats.todayDeaths}</p>
 				</div>
 			</div>
 			<p>Last Updated: {humanDateFormat}</p>

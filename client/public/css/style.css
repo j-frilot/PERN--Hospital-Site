@@ -22,6 +22,43 @@ body {
 	background-color: whitesmoke;
 }
 
+.container {
+	width: 85%;
+	margin: auto;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.75rem;
+}
+
 .btn {
 	padding: 5px 20px;
 	outline: none;
@@ -231,7 +268,7 @@ footer {
 	height: 500px;
 	width: 100%;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-		url('/public/images/banner-3.jpg');
+		url('/images/banner-3.jpg');
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;

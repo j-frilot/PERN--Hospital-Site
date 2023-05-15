@@ -17,12 +17,11 @@ const Slider = (props) => {
 		}, 3000);
 	});
 	return (
-		<section className="slide-show flex align-center justify-center">
+		<section className="slide-show">
 			<img
 				src={slides[currentSlide]}
 				alt="slide"
-				className="slide-show-img w-full"
-				style={{ height: '600px' }}
+				className="slide-show-img"
 			/>
 			;
 		</section>

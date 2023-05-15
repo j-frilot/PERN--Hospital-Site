@@ -34,7 +34,7 @@ const ContactForm = () => {
 
 	return (
 		<section>
-			<div className="module form-container p-6 text-indigo-950 bg-gray-200 shadow-md">
+			<div className="module form-container">
 				<form>
 					<fieldset>
 						<legend>
@@ -79,12 +79,7 @@ const ContactForm = () => {
 						></textarea>
 					</fieldset>
 
-					<input
-						type="submit"
-						value="Send"
-						onClick={displayInfo}
-						className="py-1.5 px-5 outline-0 border-0 rounded text-gray-200 bg-indigo-950 "
-					/>
+					<input type="submit" value="Send" onClick={displayInfo} />
 				</form>
 			</div>
 		</section>
