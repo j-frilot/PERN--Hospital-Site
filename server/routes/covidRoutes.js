@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-// const { covidQueries: query } = require('../queries/Query');
 const db = require('../db/dbconfig');
 
 //--------------------------------------------------------------

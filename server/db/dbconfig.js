@@ -1,12 +1,15 @@
 // get the client
+const dotenv = require('dotenv');
+dotenv.config();
 const mysql = require('mysql2');
 
 // create the connection to database
 const connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'josh',
-	database: 'hospital',
-	password: 'PASSWORD',
+	host: process.env.HOST,
+	user: process.env.USER,
+	password: process.env.PASSWORD,
+	port: process.env.DB_PORT,
+	database: process.env.NAME,
 });
 
 // simple query

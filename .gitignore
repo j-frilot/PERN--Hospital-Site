@@ -1,7 +1,10 @@
+###### CLIENT
+client/node_modules
+
 ###### SERVER
-node_modules
-/node_modules
-package-lock.json
+server/node_modules
+server/.env
+server/
 notes.html
 .git-old
 .DS_Store
@@ -18,8 +21,6 @@ notes.html
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-build 
-/build
-./build
-.netlify
-config.env
+
+*.log
+temp/

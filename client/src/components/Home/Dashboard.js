@@ -9,6 +9,7 @@ const Dashboard = () => {
 			.then((res) => res.json())
 			.then((res) => {
 				setDashboard(res);
+				console.log(res);
 			});
 	}, []);
 
